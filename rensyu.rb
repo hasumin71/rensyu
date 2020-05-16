@@ -1,5 +1,9 @@
-def left2(s)
-  puts s[2..3] + s[0..1]
-end
+#入館料の計算
+n = gets.chomp.to_i
+m,a,b = gets.split(' ').map(&:to_i)
 
-left2("かたづけ")
+if n < m 
+    puts n * b
+else
+    puts n * a
+end    
