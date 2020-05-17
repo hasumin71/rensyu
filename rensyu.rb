@@ -1,12 +1,11 @@
-#配列の全ての数値の合計
-array = [1, 3, 5, 6, 3, 2, 5, 23, 2]
-puts array.sum
-#anather
-array = [1, 3, 5, 6, 3, 2, 5, 23, 2]
+#配列の5以上の数の合計
+array = [4, 0, 5, -1, 3, 10, 6, -8]
 ans = 0
 
-array.each do |e|
-  ans += e
+array.each do |element|
+  if element >= 5
+    ans += element
+  end
 end
 
 puts ans
