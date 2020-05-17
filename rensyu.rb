@@ -1,11 +1,13 @@
-#配列の5以上の数の合計
-array = [4, 0, 5, -1, 3, 10, 6, -8]
+#改行区切りで正の整数がn個入力されるので、n個の整数のうち、5以上のものを全て足し合わせた値を出力してください。
+loop = gets.chomp.to_i
 ans = 0
 
-array.each do |element|
-  if element >= 5
-    ans += element
-  end
+(1..loop).each do
+    n = gets.chomp.to_i
+    if n >= 5
+        ans += n
+    end    
 end
 
-puts ans
+puts ans 
+    
