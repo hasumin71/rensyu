@@ -1,7 +1,12 @@
-#複数行の入力と出力
-num = gets.chomp.to_i
+#配列の全ての数値の合計
+array = [1, 3, 5, 6, 3, 2, 5, 23, 2]
+puts array.sum
+#anather
+array = [1, 3, 5, 6, 3, 2, 5, 23, 2]
+ans = 0
 
-(1..num).each { |i|
-  output = gets.chomp.to_i
-  puts output
-}
+array.each do |e|
+  ans += e
+end
+
+puts ans
