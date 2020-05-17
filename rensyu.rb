@@ -1,9 +1,7 @@
-#入館料の計算
-n = gets.chomp.to_i
-m,a,b = gets.split(' ').map(&:to_i)
+#複数行の入力と出力
+num = gets.chomp.to_i
 
-if n < m 
-    puts n * b
-else
-    puts n * a
-end    
+(1..num).each { |i|
+  output = gets.chomp.to_i
+  puts output
+}
