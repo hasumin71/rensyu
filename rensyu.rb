@@ -1,3 +1,3 @@
-#複数の値を取得し、改行して出力
-str = gets
-puts str.split
+#複数の値を取得し、足して出力
+nums = gets.split(' ')
+puts nums[0].to_i + nums[1].to_i
