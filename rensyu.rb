@@ -1,3 +1,7 @@
+#文字列の一文字めを取得
+str = gets.chomp
+puts str[0...1]
+
 count = gets.chomp.to_i #行数を指定する値を取得
 sum = 0 #合計値を意味する変数の初期値設定
 
