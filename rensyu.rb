@@ -1,3 +1,10 @@
+#与えられた二つの値の間を順番に出力
+a,b = gets.chomp.split #二つの値を配列として取得
+
+for n in a.to_i..b.to_i do  #整数a〜bの値(n)を順番に回す
+  p #nを出力
+end
+
 #文字列の一文字めを取得
 str = gets.chomp
 puts str[0...1]
