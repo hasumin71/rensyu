@@ -1,3 +1,11 @@
+nums = gets.chomp.split(" ") #スペース区切りの二つの値を配列として取得(スペースで区切る)
+str = gets.chomp.split("") #文字列を分割して配列として取得(一文字だけ区切る)
+
+for i in (nums[0].to_i - 1)..(nums[1].to_i - 1) #nums1から(..)nums2の範囲のiを回す
+    print str[i]
+end
+
+
 #与えられた二つの値の間を順番に出力
 a,b = gets.chomp.split #二つの値を配列として取得
 
