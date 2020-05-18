@@ -1,3 +1,15 @@
+#指定範囲だけ大文字
+nums = gets.chomp.split(' ') #複数の値をスペース区切りで取得
+str = gets.chomp #文字列を取得
+
+(1..(str.size)).each do |i| #1からストリングの文字数分回す
+  if nums[0].to_i <= i && i <= nums[1].to_i #もしiがnum1以上、かつiがnum2以下なら
+    print str[i - 1].upcase #文字列のiを大文字にする
+  else
+    print str[i - 1]  #そうでなければ普通に出力
+  end
+end
+
 #スペース区切りの2つの整数が入力されるので、その区間の全ての整数を順に表示してください。
 a,b = gets.chomp.split(" ")
 for i in (a.to_i)..(b.to_i) do
