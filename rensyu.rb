@@ -1,3 +1,9 @@
+#スペース区切りの2つの整数が入力されるので、その区間の全ての整数を順に表示してください。
+a,b = gets.chomp.split(" ")
+for i in (a.to_i)..(b.to_i) do
+  puts i
+end   
+
 nums = gets.chomp.split(" ") #スペース区切りの二つの値を配列として取得(スペースで区切る)
 str = gets.chomp.split("") #文字列を分割して配列として取得(一文字だけ区切る)
 
