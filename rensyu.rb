@@ -1,3 +1,8 @@
+#文字の重複カウント
+query = gets.chomp
+source = gets.chomp
+
+puts source.count(query)
 #指定範囲だけ大文字
 nums = gets.chomp.split(' ') #複数の値をスペース区切りで取得
 str = gets.chomp #文字列を取得
