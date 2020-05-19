@@ -48,7 +48,7 @@ num = gets.chomp.to_i #整数を受け取る
 array = {} #ハッシュをarrayに代入,次に受け取る複数の要素をキーとバリューの関係で保管したいから。
 
 (1..num).each do #一から受け取った数をeachで回す。
-  line = gets.chomp.split(' ') #取得した値を半角スペース区切りで配列に入れる,変数に代入
+  line = gets.chomp.split(' ') #取得aaした値を半角スペース区切りで配列に入れる,変数に代入
   array[line[1].to_i] = line[0] #変数line[0]を[line[1].to_i]に代入
 end
 
@@ -58,3 +58,36 @@ array.each do |ele| #配列を回す
   puts ele[1] #ローマ字のみ出力
 end
 
+#続き
+
+num = gets.chomp.to_i
+array = {}
+
+(1..num).each do
+    line = gets.chomp.split(" ")
+    array[line[1].to_i] = line[0] #line[0]がarray[line[1]]のバリューになる
+end
+
+puts array  #出力結果がこうなる=>{1=>"A", 2=>"B"}
+
+#重複の判定
+# 解答例1
+array = ['HND', 'NRT', 'KIX', 'NGO', 'NGO']
+
+is_duplicate = false
+
+array.size.times do |i|
+    array.size.times do |j|
+        if i != j and array[i] == array[j]
+            is_duplicate = true
+        end
+    end
+end
+
+puts is_duplicate
+
+
+# 解答例2
+array = %w[HND NRT KIX NGO NGO] #%w空白区切りで配列を作成
+
+puts array.size != array.uniq.size #uniqは配列の中で重複した要素を削除した配列を返す。
