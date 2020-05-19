@@ -91,3 +91,31 @@ puts is_duplicate
 array = %w[HND NRT KIX NGO NGO] #%w空白区切りで配列を作成
 
 puts array.size != array.uniq.size #uniqは配列の中で重複した要素を削除した配列を返す。
+
+#配列の重複をカウント
+array = ['HND', 'NRT', 'KIX', 'NGO', 'NGO', 'NGO', 'NGO', 'NGO'] #要素の入った配列をarrayに代入
+count = {} #ハッシュをcountに代入
+
+array.each do |element| #arrayをelementとして回す
+  if count[element] 
+    count[element] = count[element] + 1
+  else
+    count[element] = 1
+  end
+end
+
+count.each do |_key, value|
+  if value != 1
+    puts value
+  end
+end
+
+#ap昇順ソート出力 
+gets.chomp # 1行目の入力は使わないので読み飛ばし
+array = gets.split(' ')
+
+(0..array.size - 1).each do |i|
+  array[i] = array[i].to_i
+end
+
+puts array.sort
