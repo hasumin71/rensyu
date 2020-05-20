@@ -10,11 +10,11 @@ array = {} #からのハッシュをarrayに代入
   string = values[0]  #valueの0は文字列
   points = values[1].to_i #value1を整数にしてpointsに代入
 
-  if array[string]   #arrayが文字列なら
-    current = array[string] #文字列を現在に代入
+  if array[string]   #もしarrayに文字列があればs
+       current = array[string] #文字列を現在に代入
     array[string] = current + points  #現在(文字列)とpoints(整数)を足して配列に代入
   else
-    array[string] = points  #pointsをarray[string]に代入
+    array[string] = points  #pointsをarray[string]に代入(pointsはstringのvalueみたいなものp)
   end
 end
 
@@ -25,3 +25,5 @@ array.each do |string, points|
   puts "#{string} #{points}"
 end
 
+#指定した値を長さ順で並び替えるc
+sort_by { |x| x.size }

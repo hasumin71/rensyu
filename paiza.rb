@@ -119,3 +119,10 @@ array = gets.split(' ')
 end
 
 puts array.sort
+
+#アルファベッド全て出力
+string = gets.chomp
+
+(string[0]..string[-1]).each do |c|
+  puts c
+end
