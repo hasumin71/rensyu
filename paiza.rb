@@ -120,9 +120,29 @@ end
 
 puts array.sort
 
-#アルファベッド全て出力
+#アルファベッド全て出力p
 string = gets.chomp
 
 (string[0]..string[-1]).each do |c|
   puts c
 end
+#アルファベッドを数値で返す
+str = gets.chomp.split("")
+
+puts str[2].ord
+
+#電波でデータ通信するプログラムが壊れてしまっており、あなたはそれを直そうとしています。
+#n回の通信をしたとき、受信した各データ各電波強度 d_i が与えられます。各電波強度 d_i は 0 から 10 の整数で表され、 5 以下では通信に失敗します。
+#n 回の通信のうち通信に成功した回数を出力してください。
+
+n = gets.chomp.to_i
+nums = gets.split(" ").map!(&:to_i)
+ans = 0
+
+(0..(nums.size - 1)).each do |i|
+    if 5 < nums[i]
+        ans += 1
+    end
+end
+
+puts ans
