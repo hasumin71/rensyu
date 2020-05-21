@@ -152,3 +152,23 @@ str = gets.chomp.split("")
 odd = str.each_slice(2).map(&:first )
 
 puts odd.join
+
+#じゃんけん
+n = gets.chomp.to_i
+w_a = 0
+w_b = 0
+
+(1..n).each do 
+    g_p_c = gets.chomp.split(" ")
+    if g_p_c[0] == "g" && g_p_c[1] == "p" || g_p_c[0] == "p" && g_p_c[1] == "c" || g_p_c[0] == "c" && g_p_c[1] == "g" 
+        w_b += 1
+    elsif g_p_c[0] == "g" && g_p_c[1] == "g" || g_p_c[0] == "p" && g_p_c[1] == "p" || g_p_c[0] == "c" && g_p_c[1] == "c" 
+        w_a += 0
+        w_b += 0
+    else
+        w_a += 1
+    end    
+end
+
+puts w_a
+puts w_b
