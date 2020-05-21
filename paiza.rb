@@ -172,3 +172,51 @@ end
 
 puts w_a
 puts w_b
+
+#正規表現その１ 文字列から数字のみ取得 gsubとは、正規表現のパターンいマッチした文字列を全て置き換えるメソッド
+num = "abc12345def67890".gsub(/[^\d]/, "").to_i
+num = "asava123123asdf".gsub(/[^\d]/, "").to_i
+
+#文字を置換
+str = gets
+puts str.gsub(/A|E|G|I|O|S|Z|/,"A"=>"4","E"=>"3","G"=>"6","I"=>"1","O"=>"0","S"=>"5","Z"=>"2")
+    
+#エレベーター
+num = gets.to_i
+
+rope = 1 #初期値
+w =1 
+annum = [ ] #差分の合計
+
+while num >= rope 
+    a = gets.to_i 
+    
+    if w == 1
+        af = a - 1
+        rope += 1
+        annum << af
+        w = a
+    else
+        if w >= a
+            af  = w -a
+            rope += 1
+            annum << af
+            w = a
+        else
+            af = a - w
+            rope += 1
+            annum << af
+            w = a
+        end
+    end
+end
+
+puts annum.sum
+
+#アルファベッド探し(ordメソッド使用)
+string = [] #からの配列をstringに入れる
+3.times do #三回回す
+  string.push(gets.chomp) #文字列をpushする(pushメソッドは配列の末尾に引数を要素として追加するメソッド)
+end
+
+puts string[0].ord <= string[2].ord && string[2].ord <= string[1].ord #(ordメソッドとは文字をその文字のコードポイントに変換するメソッド。)
