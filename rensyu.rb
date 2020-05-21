@@ -58,11 +58,20 @@ puts sums
 
 #配列の要素の整数に変換するメソッド
 .map!(&:to_i)
-=end
+
 
 #配列の奇数番目と偶数番目を取り出す方法
 ary = [1,2,3,4,5,6,7,8,9,10]
 odd = ary.each_slice(2).map(&:first) #配列の要素を二つずつ取り出し、mapメソッドでさらに際配列し,書く配列の最初の要素を変数に代入。
-even = ary.each_slice(2).map(&:last) #上記とだいたい同じ。
+even = ary.each_slice(2).map(&:last) #上記とだいたい同じ。#each_sliceは引数に渡した値ごとに要素を取り出す。みたいなメソッド
 
-p odd 
+p odd #pは配列ごと出力
+puts odd #putsは要素を開業して出力
+=end
+
+array = [1,2,3,4,5,6,7,8]
+odd = array.each_slice(2).map(&:first)
+even = array.each_slice(2).map(&:last)
+
+p odd
+puts even
