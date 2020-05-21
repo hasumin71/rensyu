@@ -220,3 +220,22 @@ string = [] #からの配列をstringに入れる
 end
 
 puts string[0].ord <= string[2].ord && string[2].ord <= string[1].ord #(ordメソッドとは文字をその文字のコードポイントに変換するメソッド。)
+#string[0]のコードポイントが[2]のポイントよりも上で、[2]が[1]よりも下であればtrue、条件がそれわなければfalse
+
+#五目並べ
+5.times do
+  gets.chomp
+end
+
+#五目並べ2
+g = gets
+ 
+if  g == "OOOOO" 
+    puts "O"
+elsif g == "XXXXX"
+    puts "X"
+else
+    puts "D"
+end
+    
+   
