@@ -239,26 +239,58 @@ else
 end
 
 #見本
-array = ['O', 'X'] 
-result = 'D'
+array = ['O', 'X'] #配列要素OXを変数arrayに代入
+result = 'D' #勝者なしのDを変数resultに代入
 
-(1..5).each do
-  string = gets.chomp.split('')
+(1..5).each do #1から5を回す
+  string = gets.chomp.split('') #得た要素をスプリットしてstringに代入 #5回勝負する
 
-  array.each do |a|
-    cnt = 0
-    string.each do |s|
-      if s == a
-        cnt = cnt + 1
+  array.each do |a| #OXをaに代入して回す
+    cnt = 0 #合計の初期値を０ #勝敗を確認するための変数が必要
+    string.each do |s| #文字列をsに代入して回す #ここでいうストリングは五目並べのOXOXOなどの並びのこと
+                        #そもそもeach文て文字一字ずつ回してるんじゃないの？
+                        #eachの入れ子にeach文入れるとarray[0]を回した時にstring[s]が5回回るって認識でいいかい？
+      if s == a  #sとaが同じなら #そこで
+        cnt += 1 #１をcntにカウント
       end
     end
-    if cnt >= 5
-      result = a
+    if cnt >= 5 #arrayの一回分のOに対してstringの5回分すべて合致すれば #定義したインデントでその変数を使う
+      result = a #結果がarray[0]か[1]になるということ
     end
   end
 end
 
-puts result
+puts result #結果を出力
 
+#五目並べ3 縦に５つ並べば勝ち
+board = []
+result = 'D'
+
+# 盤面の初期化
+(1..5).each do
+  board.push(gets.chomp.split(''))
+end
+
+(0..4).each do |i|
+  o = 0
+  x = 0
+  board.each do |row|
+    if row[i] == 'O'
+      o = o + 1
+    elsif row[i] == 'X'
+      x = x + 1
+    end
+  end
+
+  if o == 5
+    result = 'O'
+    break
+  elsif x == 5
+    result = 'X'
+    break
+  end
+end
+
+puts result
     
    
