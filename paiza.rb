@@ -227,7 +227,7 @@ puts string[0].ord <= string[2].ord && string[2].ord <= string[1].ord #(ordメ�
   gets.chomp
 end
 
-#五目並べ2
+#五目並べ2 #変数cntはcount
 g = gets
  
 if  g == "OOOOO" 
@@ -237,5 +237,28 @@ elsif g == "XXXXX"
 else
     puts "D"
 end
+
+#見本
+array = ['O', 'X'] 
+result = 'D'
+
+(1..5).each do
+  string = gets.chomp.split('')
+
+  array.each do |a|
+    cnt = 0
+    string.each do |s|
+      if s == a
+        cnt = cnt + 1
+      end
+    end
+    if cnt >= 5
+      result = a
+    end
+  end
+end
+
+puts result
+
     
    
