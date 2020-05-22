@@ -173,7 +173,7 @@ end
 puts w_a
 puts w_b
 
-#正規表現その１ 文字列から数字のみ取得 gsubとは、正規表現のパターンいマッチした文字列を全て置き換えるメソッド
+#正規表現その１ 文字列から数字のみ取得 gsubとは、正規表現のパターンがマッチした文字列を全て置き換えるメソッド
 num = "abc12345def67890".gsub(/[^\d]/, "").to_i
 num = "asava123123asdf".gsub(/[^\d]/, "").to_i
 
@@ -290,7 +290,7 @@ end
 
   if o == 5
     result = 'O'
-    break
+    break #breakとはループから脱出するための命令。#なぜ急にbreak使い出した？
   elsif x == 5
     result = 'X'
     break
@@ -309,3 +309,53 @@ array = [
 array.transpose[0] # [1,1,1]
 array.transpose[1] # [2,2,2]
 array.transpose[2] # [3,3,3]
+
+#五目並べ4 斜めに五つ揃えば勝ち
+board = []
+result = 'D'
+
+# 盤面の初期化
+(1..5).each do
+  board.push(gets.chomp.split(''))
+end
+
+(1..2).each do |time|
+  o = 0
+  x = 0
+
+  i = 0
+
+  if time == 1
+    j = 0
+  else
+    j = 4
+  end
+
+  (1..5).each do
+    if board[i][j] == 'O'
+      o = o + 1
+    elsif board[i][j] == 'X'
+      x = x + 1
+    else
+      break
+    end
+
+    i = i + 1
+
+    if time == 1
+      j = j + 1
+    else
+      j = j - 1
+    end
+  end
+
+  if o == 5
+    result = 'O'
+    break
+  elsif x == 5
+    result = 'X'
+    break
+  end
+end
+
+puts result
