@@ -263,21 +263,27 @@ end
 puts result #結果を出力
 
 #五目並べ3 縦に５つ並べば勝ち
-board = []
-result = 'D'
+board = [] #配列をboadに渡す
+result = 'D' #引き分けをDとして変数resultに渡す
 
 # 盤面の初期化
-(1..5).each do
-  board.push(gets.chomp.split(''))
+(1..5).each do 
+  board.push(gets.chomp.split('')) #boardの中に入力された文字列を分割して入れる。
 end
 
-(0..4).each do |i|
-  o = 0
-  x = 0
-  board.each do |row|
-    if row[i] == 'O'
-      o = o + 1
-    elsif row[i] == 'X'
+#この時点で下記のようになっている
+#[["X", "X", "O", "X", "O"], ["O", "X", "O", "X", "X"], ["O", "O", "O", "O", "O"], ["O", "X", "O", "X", "."], ["X", "O", "X", "X", "O"]]
+# p board[0]とすると["X", "X", "O", "X", "O"]のように、一番最初の要素としての配列が出力される。
+#ここまでで全行の文字列を一文字ずつ全て取得
+
+(0..4).each do |i|  #?なぜ1..5じゃない #それと引数にiを渡しているのはなぜ？#boardの一文字を出力。
+  o = 0  #oに初期値設定
+  x = 0  #xに初期値設定
+  board.each do |row| #ボードの要素を回す #二次元配列を使う時にはeachを二回回して取り出す。
+    #入れ子にしてるのはboard[0] = ["X", "X", "O", "X", "O"]の[0] = Xを取得しようとしているため?次の[1] = ["O", "X", "O", "X", "X"]の[]
+    if row[i] == 'O' #もしrowのiが oの場合
+      o = o + 1  #oに一を追加する
+    elsif row[i] == 'X' #xがi
       x = x + 1
     end
   end
@@ -292,5 +298,14 @@ end
 end
 
 puts result
-    
-   
+
+#補足
+#transposeメソッドを使えば、二次元配列にあたるところの[1]を取得できる。
+array = [
+  [1,2,3],
+  [1,2,3],
+  [1,2,3]
+]
+array.transpose[0] # [1,1,1]
+array.transpose[1] # [2,2,2]
+array.transpose[2] # [3,3,3]
