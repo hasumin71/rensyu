@@ -311,13 +311,14 @@ array.transpose[1] # [2,2,2]
 array.transpose[2] # [3,3,3]
 
 #五目並べ4 斜めに五つ揃えば勝ち
-board = []
+board = []  
 result = 'D'
 
 # 盤面の初期化
 (1..5).each do
   board.push(gets.chomp.split(''))
 end
+#ここまではさっきのと一緒
 
 (1..2).each do |time|
   o = 0
