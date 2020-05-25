@@ -39,3 +39,23 @@ SELECT name, price - cost #nameと販売利益の全てのデータを取得
 FROM items 
 ORDER BY price - cost DESC #h販売利益を降順に並び替え
 LIMIT 5; #上位五件まで表示
+
+SELECT item_id, COUNT(*)
+FROM sales_records
+GROUP BY item_id
+ORDER BY COUNT(*) DESC #グループ倍を使用する時は、欲しいデータが単一データだけでなく、複数のデータを集計した計算結果も含まれていることです。
+LIMIT 5;
+
+#売れた数が多い上位5位の商品の、
+#・商品のID
+#・商品の名前
+#・売れた数
+#を取得してください。
+#ただし、売れた数が多い順番に取得結果を並び替えてください。
+SELECT items.id,items.name, COUNT(*) 
+FROM sales_records
+JOIN items 
+ON sales_records.item_id = items.id
+GROUP BY items.id, items.name 
+ORDER BY COUNT(*) DESC
+LIMIT 5;
