@@ -33,3 +33,9 @@ FROM items;
 SELECT *
 FROM items
 WHERE name LIKE "%シャツ%"; #あいまい検索。サーチしたい単語の両端に%を付与、名前の一部に"シャツ"を含む文字を検索する。
+
+#LIMIT
+SELECT name, price - cost #nameと販売利益の全てのデータを取得
+FROM items 
+ORDER BY price - cost DESC #h販売利益を降順に並び替え
+LIMIT 5; #上位五件まで表示
