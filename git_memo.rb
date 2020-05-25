@@ -16,3 +16,11 @@ ON players.country_id = countries.id #onは結合条件,「on テーブル名.�
 WHERE countries.name = "日本" #whereでもテーブル名を指定することができる。
 AND height >= 180 #andはwhereに複数の条件を指定することができる。
 ;
+
+#joinの使い方⓶
+SELECT countries.name AS "国名", AVG(goals) AS "平均得点"  #例えばAVG(goals)がgoalsのみはできない。
+FROM players
+JOIN countries #fromで指定したテーブル以外の紐付けしたいテーブルを指定。
+ON players.country_id = countries.id #onは結合条件,「on テーブル名.外部キー = テーブル名.主キー」
+GROUP BY countries.name; #国テーブルのnameカラムでグループ化するよ
+#group byの注意点 グループバイを用いる場合,セレクトで指定できるのはグループバイで指定したカラム名と集計関数のみ。
