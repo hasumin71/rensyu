@@ -28,3 +28,8 @@ GROUP BY countries.name; #国テーブルのnameカラムでグループ化す�
 #DISTINCT 重複レコードを除く際に使う
 SELECT DISTINCT(name) 
 FROM items;
+
+#LIKE 
+SELECT *
+FROM items
+WHERE name LIKE "%シャツ%"; #あいまい検索。サーチしたい単語の両端に%を付与、名前の一部に"シャツ"を含む文字を検索する。
