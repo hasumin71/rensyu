@@ -13,7 +13,7 @@ SELECT * #全ての項目を検索する #⓶結合された後にセレクト�
 FROM players 
 JOIN countries #fromで指定したテーブル以外の紐付けしたいテーブルを指定。
 ON players.country_id = countries.id #onは結合条件,「on テーブル名.外部キー = テーブル名.主キー」
-WHERE countries.name = "日本" #whereでもテーブル名を指定することができる。
+WHERE countries.name = "日本" #whereは~のカラムを持ったSELECTとイメージする
 AND height >= 180 #andはwhereに複数の条件を指定することができる。
 ;
 
@@ -24,3 +24,7 @@ JOIN countries #fromで指定したテーブル以外の紐付けしたいテー
 ON players.country_id = countries.id #onは結合条件,「on テーブル名.外部キー = テーブル名.主キー」
 GROUP BY countries.name; #国テーブルのnameカラムでグループ化するよ
 #group byの注意点 グループバイを用いる場合,セレクトで指定できるのはグループバイで指定したカラム名と集計関数のみ。
+ 
+#DISTINCT 重複レコードを除く際に使う
+SELECT DISTINCT(name) 
+FROM items;
