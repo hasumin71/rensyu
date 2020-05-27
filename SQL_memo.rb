@@ -65,11 +65,25 @@ FROM sales_records
 JOIN items #なぜjoinnの必要？ アイテムの価格はitemsテーブルのみ表示されていて、売り上げはsales_recordsに文字通り記録されているため、求めているものは総売り上げで
 ON sales_records.item_id = items.id; #onは結合条件,だいたい主キーと外部キーをイコールでつなぐ
 
-#SQL_I 9
+#SQL_I 9⓵
+#10個以上購入したユーザーIDとユーザー名、購入した商品の数を取得してください
 SELECT users.id, users.name, count(*) AS "購入数"
-FROM sales_records #
+FROM sales_records #なぜこのテーブルが必要でjoinするのか
 JOIN users
 ON sales_records.user_id = users.id
 GROUP BY users.id, users.name
 HAVING count(*) >= 10;
+
+#SQL_I 9⓶
+SELECT users.id, users.name 
+FROM sales_records
+JOIN users
+ON sales_records.user_id = users.id
+WHERE sales_records.item_id = (
+  SELECT id
+  FROM items
+  WHERE name = "サンダル"
+)
+GROUP BY users.id;
+
 

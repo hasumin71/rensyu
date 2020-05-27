@@ -360,3 +360,45 @@ end
 end
 
 puts result
+
+map = []
+5.times do
+  map << gets.chomp
+end
+
+taikaku_A = map[4][0]+map[3][1]+map[2][2]+map[1][3]+map[0][4]
+taikaku_B = map[0][0]+map[1][1]+map[2][2]+map[3][3]+map[4][4]
+
+if taikaku_A == "ooooo" or taikaku_B == "ooooo"
+  puts "o"
+elsif taikaku_B == "ooooo" or taikaku_B == "ooooo"
+  puts "x"
+else
+  puts "D"
+end  
+
+#エレベーター
+ input_line = gets.to_i
+ floor = 1
+ move = 0
+ input_line.time do
+   to = gets.to_i
+   move +=(to - floor).abs
+   floor = to
+ end
+ puts move
+
+ #C056:テストの採点
+ students= gets.chomp.split(" ").map(&:to_i)
+
+(1..students[0]).each do |s| 
+    grade = 0
+    score = gets.chomp.split(" ").map(&:to_i)
+    grade += score[0] - (score[1] * 5)
+    if grade <= 0
+        grade = 0
+    end    
+    if grade >= students[1]
+        puts s
+    end
+end
