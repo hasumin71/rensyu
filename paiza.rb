@@ -255,7 +255,7 @@ result = 'D' #勝者なしのDを変数resultに代入
       end
     end
     if cnt >= 5 #arrayの一回分のOに対してstringの5回分すべて合致すれば #定義したインデントでその変数を使う
-      result = a #結果がarray[0]か[1]になるということ
+      result = a #結果がarray[0]か[1]になるということc
     end
   end
 end
@@ -402,3 +402,4 @@ end
         puts s
     end
 end
+

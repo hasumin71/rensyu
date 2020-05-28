@@ -1,1 +1,0 @@
-p "tokorosemashi".slice(6,2) #7文字めから二文字取得
