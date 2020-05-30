@@ -13,7 +13,7 @@ puts book.title
 #attr_accesorはゲッターとセッターを同時に定義することができる便利なもの(これを知るためにはまずclassを知る必要がある)
 #attr_readerはインスタンス変数にアクセスするためのゲッター
 #attr_writerはインスタンス変数にアクセスするためのセッター
-
+=begin
 #失敗例
 class User
   @name = ""
@@ -42,3 +42,5 @@ puts human.name
 #実行結果
 #taro
 #siro
+
+=end
