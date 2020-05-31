@@ -94,8 +94,34 @@ blood2result = {} #結果(ラッキーカラーとか)
 end
 
 users = user2blood.keys #user名を全て取得
-users.each do |user| #userを回す
+users.each do |user| #userを回す #発端を知ることが大切
   blood = user2blood[user] #user2bloodのuser（値である血液型を取得）を変数bloodに代入
   result = blood2result[blood] #blood2result[blood]の値をresultに代入
   puts "#{user} #{result}"
 end
+
+#自分流
+#ユーザーと血液型を取得
+num = gets.to_i
+bloods = {}
+
+num.times do 
+    in_bloods = gets.chomp.split(" ")
+    bloods[in_bloods[0]] = in_bloods[1]
+end
+
+num2 = gets.to_i
+colors = {}
+
+num2.times do 
+    in_colors = gets.chomp.split(" ")
+    colors[in_colors[0]] = in_colors[1]
+end
+
+users = bloods.keys
+users.each do |user|
+    blood = bloods[user] #valueを取得
+    color = colors[blood]
+    puts "#{user} #{color}"
+end
+    
