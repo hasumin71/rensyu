@@ -128,7 +128,7 @@ end
 #英単語複数系
 num = gets.chomp.to_i
 
-num.times do |i|
+num.times do 
     $word = gets.chomp
     if $word.index("s",-1) || $word.index("sh",-2) || $word.index("ch",-2) || $word.index("o",-1) || $word.index("x",-1)
         puts $word + "es"
@@ -138,7 +138,7 @@ num.times do |i|
     elsif $word.index("fe",-2)
         $word.slice!(-2..-1)
         puts $word + "ves"
-    elsif $word.end_with?("y") && $word[i][-2] != "a"||"i"|| "u"|| "e" ||"o"
+    elsif $word.end_with?("y") && ($word.slice(-2) != ("a"||"i"||"u"||"e"||"o"))
         $word.chop!
         puts $word + "ies"
     else
@@ -146,4 +146,7 @@ num.times do |i|
     end    
 end
   
+
+
+    
     
