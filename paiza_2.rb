@@ -124,4 +124,26 @@ users.each do |user|
     color = colors[blood]
     puts "#{user} #{color}"
 end
+
+#英単語複数系
+num = gets.chomp.to_i
+
+num.times do |i|
+    $word = gets.chomp
+    if $word.index("s",-1) || $word.index("sh",-2) || $word.index("ch",-2) || $word.index("o",-1) || $word.index("x",-1)
+        puts $word + "es"
+    elsif $word.index("f",-1) 
+        $word.chop!
+        puts $word + "ves"
+    elsif $word.index("fe",-2)
+        $word.slice!(-2..-1)
+        puts $word + "ves"
+    elsif $word.end_with?("y") && $word[i][-2] != "a"||"i"|| "u"|| "e" ||"o"
+        $word.chop!
+        puts $word + "ies"
+    else
+        puts $word + "s"
+    end    
+end
+  
     
