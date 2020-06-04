@@ -147,6 +147,33 @@ num.times do
 end
   
 
+#最遅出社時間
+a,b,c = gets.chomp.split(" ").map(&:to_i) 
+bc = b + c #bc区間の通勤時間の合計
+minute = bc
+hour = 0
+if bc >= 60
+    hour += 1
+    minute = bc - 60 
+end
+
+num = gets.to_i
+pa_leaves = [] #paiza駅の電車の出発時間
+num.times do |i|
+    leaves = gets.chomp.split(" ").map(&:to_i)
+    pa_leaves << leaves
+end
+last_arrives = [] #出社時間
+pa_leaves.each do |pa| #二次元配列の要素を取得
+  last_arrive = pa[0] + hour, pa[1] + minute
+  last_arrives << last_arrive
+end
+
+p last_arrives
+
+    
+    
+
 
     
     
