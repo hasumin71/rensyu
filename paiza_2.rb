@@ -149,6 +149,7 @@ end
 
 #最遅出社時間
 a,b,c = gets.chomp.split(" ").map(&:to_i) 
+abc = a+b+c
 bc = b + c #bc区間の通勤時間の合計
 minute = bc
 hour = 0
@@ -163,17 +164,92 @@ num.times do |i|
     leaves = gets.chomp.split(" ").map(&:to_i)
     pa_leaves << leaves
 end
+
 last_arrives = [] #出社時間
 pa_leaves.each do |pa| #二次元配列の要素を取得
-  last_arrive = pa[0] + hour, pa[1] + minute
-  last_arrives << last_arrive
+    last_arrive = pa[0] + hour, pa[1] + minute
+    last_arrives << last_arrive
 end
 
-p last_arrives
+selection_1 = []
+last_arrives.each do |la|
+    if la[1] >= 60
+      la[0] += 1 
+      la[1] = la[1] - 60  
+    end  
+    if la[0] < 9 
+        selection_1 << la
+    end
+end
 
-    
-    
+result = selection_1.last
+
+resulta = result[0]
+resultb = result[1]
+
+#出社時刻を分に戻す。
+reala = ((resulta*60 + resultb) - abc)/60 
+realb = ((resulta*60 + resultb) - abc)%60
+
+if realb < 10 
+    puts "0#{reala}:0#{realb}"
+else 
+    puts "0#{reala}:#{realb}"
+end    
 
 
-    
-    
+#M は立候補者の人数を、N は有権者の人数を、K は演説が行われる回数
+m,n,k = gets.split(" ").map &:to_i
+
+#番号を持つ候補者が演説を行った順番
+a = readlines.map &:to_i #readlineにより一行ごとに取得する値を配列で取得
+#立候補者の人数に応じて、支持者の人数を図れる配列を用意
+r=[] #[0,0,0]になる
+m.times {r.push(0)} #立候補者の人数分を回してからの配列rに0を入れる
+#すべての演説が終わった後、最も支持者が多い立候補者の番号(複数ある場合は、すべて出力)
+a.each do |i|
+    #誰も支持していない人が、指示をする
+    if n >0 #nは有権者の人数がゼロより上？ 
+        n -= 1 #-1をひく #演説するたびに誰も支持していない有権者から一人が支持するから減る
+        r[i-1] += 1 #立候補者のインデックス０番にカウント1する。
+    end
+    #他の人を支持している人が、支持をする
+   
+    r.times do |t| #カウントしていったrを回す
+        if r[t] >0 #もしrのtが0より上であれば
+            r[t] -= 1 #どうして-1するのかわからない
+            r[i-1] += 1
+        end
+    end
+end
+
+#最大数を返す
+r.each_index do |t|
+    if r[t] == r.max
+      puts t+1
+    end
+end
+._
+#自己流
+#mが立候補者の人数
+#nが有権者の人数
+#kが演説が行われる回数
+m,n,k = gets.chomp.split(" ").map(&:to_i)
+
+#各立候補者を番号で配列に格納
+candidates = []
+(1..m).each do |m|
+    candidates << m
+end
+
+#演説が行われる回数をeachで回して、取得した値と候補者の番号が一致すればカウントするみたいな
+c_speech_log = {}
+k.times do |k|
+     in_candidate_i = gets.chomp.to_i
+     candidates.each do |c|
+         if c == in_candidates_i
+             c_speech_log[c[0]] =  
+end     
+
+     
+#配列の中の同じ値はカウントする
