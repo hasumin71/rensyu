@@ -187,7 +187,7 @@ result = selection_1.last
 resulta = result[0]
 resultb = result[1]
 
-#出社時刻を分に戻す。
+#出社時刻を分に戻す。つまり9時であれば9x60=540に戻して、60(１時間)で割った数と余り(分)を分ける。
 reala = ((resulta*60 + resultb) - abc)/60 
 realb = ((resulta*60 + resultb) - abc)%60
 
