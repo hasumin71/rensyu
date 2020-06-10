@@ -253,3 +253,25 @@ end
 
      
 #配列の中の同じ値はカウントする
+
+C079:カードを集める
+N,M = gets.chomp.split(" ").map(&:to_i)
+cards = [] #[1,2,3]種類が入る
+M.times do |s|
+    card = s+1
+    cards << card
+end
+ style = readlines.map(&:to_i)
+ style.each_with_index do |s, i|
+     if cards.empty?
+         puts i
+         break
+     else
+         cards.delete(s)
+         i +=1
+     end
+     
+     if i == N 
+         puts "unlucky"
+     end         
+ end
