@@ -75,3 +75,18 @@ even = array.each_slice(2).map(&:last)
 
 p odd
 puts even
+
+#ソート
+num = gets.chomp.to_i
+array = {}
+
+(1..num).each do
+  line = gets.chomp.split(' ')
+  array[line[1].to_i] = line[0]
+end
+
+array = array.sort #sortメソッドは配列の[0]をソートする
+
+array.each do |ele|
+  puts ele[1]
+end
