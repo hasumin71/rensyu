@@ -9,4 +9,4 @@ str.each_with_index do |s,i|
         newst << s
     end 
 end 
-puts newst.join          
+puts newst.join
