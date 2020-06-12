@@ -1,5 +1,5 @@
 n,k = gets.chomp.split(' ').map(&:to_i) #n = 買う予定の金額, k = 嫌いな数字の数
-d = gets.chomp.split(' ').map(&:to_s) #d = 嫌いな数字
+d = gets.chomp.split(' ').map(&:to_s) #d = 嫌いな数字一覧
  
 pay = n #
 while true #while は指定した条件式がtrueの場合繰り返す
