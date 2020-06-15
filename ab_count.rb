@@ -2,11 +2,11 @@
 #違ってたらFalseを返す関数です。
 
 def mozi_ab(string)
-    if string.count("a") == string.count("b")
-        puts "True"
-    else     
-        puts "False"
-    end
+  if string.count("a") == string.count("b")
+      puts "True"
+  else     
+      puts "False"
+  end
 end
 
 mozi_ab("adsfaabbba")
