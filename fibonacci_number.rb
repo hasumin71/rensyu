@@ -12,7 +12,6 @@ end
 
 #フィボナッチ数列のn番目の値を出力する方法
 def fib(n)
-  
   f[0] = f[1] = 1
   if n >= 2
     (2..n).each do |i|
@@ -29,6 +28,11 @@ def fib(n)
   n.times.each_with_object([0,1]) { |num, obj| obj << obj[-2] + obj[-1] } 
 end
 puts fib(10).join(" ")
+#=> 0 1 1 2 3 5 8 13 21 34 55 89
 #each_with_objectとは？ 
+#numはfibの引数nのh変数、objは、メソッドで渡しているオブジェクトの変数
+#obj[-2]とはobject([0,1])の０で[-1]は1の事、つまりnumが0の時は1,numが１の時は
 #全てのデータはオブジェクトです。配列やHash、数字や文字列も、オブジェクトです。
+
+
 
