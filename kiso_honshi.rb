@@ -1,4 +1,4 @@
-=begin
+
 def registration_student(students) #生徒を登録するためのメソッド  #引数はメソッドの外で配列を渡した変数
   # 生徒の名前と年齢を登録できるようにしなさい
   student = {} #からのハッシュを変数に渡す
@@ -60,7 +60,6 @@ while true
   end
 end
 
-=end
 student = []
 hash = {age: 21,name:"abo",score:32}
 hash2 = {age: 23,name:"kasi",score:2}
