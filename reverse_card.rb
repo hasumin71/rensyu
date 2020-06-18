@@ -17,5 +17,5 @@ cards = Array.new(N, false)
 
 #裏向きのカードを出力
 N.times{|i|
-  p i + 1 if !cards[i]
+  puts i + 1 if !cards[i]
 }
