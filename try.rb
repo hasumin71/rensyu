@@ -3,19 +3,12 @@
 #ある人が二番のカードから一枚置きにカードを裏返していきます。
 
 #カードの初期化
-N = 100
-cards = Array.new(N, false)
+N = 100 
+cards = Array.new(N, false) #第一引数は作成する要素数#配列のなかに要素がN個あって、全てにfalseを入れる)
 
-#2 ~ Nまで裏返す
-(2..N).each{ |i|
-  j = i-1
-  while (j < cards.size) do
+(2..N).each do |i|
+  j = i - 1 #めくるカード番号二番目の場合は一枚置きに
+  while j < cards.size do #cards.sizeは
     cards[j] = !cards[j]
-    j += 1
-  end
-}
-
-#裏向きのカードを出力
-N.times{|i|
-  p i + 1 if !cards[i]
-}
+    j += i
+  end  
