@@ -1,8 +1,6 @@
-N =12 
-
-def move(log)
-  return 1 if log.size == N + 1
-
-  cnt = 0
-  [[0,1],[0,-1],[1,0],[-1,0]].each {|d|
-    next_pos = [log]
+#男性20人、女性10人が到着した場合、どこで区切っても二つのグループのいずれも
+#男女の数が異なってしまうような到着順が何通りあるかを求めてください。
+boy, girl = 20, 10 
+boy, girl = boy + 1, girl + 1  #なぜ一足す？
+ary = Array.new(boy * girl){0} #210の０が入った配列ができる{}は要素
+p ary
