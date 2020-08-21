@@ -5,15 +5,16 @@
 #絶対値が最小とは？
 # frozen_string_literal: true
 
-x, k, d = gets.chomp.split.map(&:to_i)
-abso = x.abs
-min = abso / d
-if min >= k
-  puts abso - k * d
+x,k,d = gets.chomp.split.map(&:to_i)
+abso = x.abs 
+min = abso/d 
+if min >= k 
+  puts abso - k*d 
 elsif (k - min).odd?
-  puts (min + 1) * d - abso
-else
-  puts abso % d
+  puts (abso - (min + 1)*d).abs 
+else 
+  puts abso%d
 end
+    
 
 
