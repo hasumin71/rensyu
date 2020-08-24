@@ -12,7 +12,7 @@ ans = 0
       W.times do |j|
         next if is >> i & 1 == 1 #is(行が消されていたらnext)
         next if js >> j & 1 == 1 #js(列が消されていたらnext)
-        cnt += 1 if cc[i][j] == '#' #消されていないところが"#"ならインクリメント
+        cnt += 1 if cc[i][j] == '#' #is,jsに消されていないところが"#"ならインクリメント
       end
     end
  
