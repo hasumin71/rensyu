@@ -1,7 +1,7 @@
 k = gets.to_i 
 a = 7
 ans = 0
-k.times do |i|
+k.times do
   if a % k == 0
     ans = (i+1)
     break
